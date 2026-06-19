@@ -1,11 +1,6 @@
 const express = require('express');
-const { Pool } = require('pg');
 const router = express.Router();
-
-// Configuración de conexión a PostgreSQL
-const pool = new Pool({
-  connectionString: 'postgresql://postgres:postgres@localhost:5432/bonifacio_bd?schema=public'
-});
+const pool = require('../config/db');
 
 // Obtener todos los parámetros o filtrar por grupo o clave usando SP
 router.get('/', async (req, res) => {
